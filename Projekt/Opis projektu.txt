@@ -1,0 +1,4 @@
+Projekt polega na zaimplementowaniu prostej gry Snake.
+Sterujemy w niej wężem poruszającym się po planszy. 
+Gdy wąż natrafi na obiekt klasy Food, jego długość wzrośnie, a użytkownik zdobędzie punkty.
+Gdy jednak zderzy się sam z sobą lub z krawędzią planszy, gra się kończy, a wynik jest zapisywany.
