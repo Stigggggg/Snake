@@ -20,9 +20,11 @@ class GamePanel extends JPanel implements ActionListener
     boolean running=false;
     Timer timer;
     Random random;
+    Highscore highscore;
     GamePanel()
     {
         random=new Random();
+        highscore=new Highscore();
         this.setPreferredSize(new Dimension(width,height));
         this.setBackground(Color.black);
         this.setFocusable(true);
@@ -158,6 +160,18 @@ class GamePanel extends JPanel implements ActionListener
         g.setFont(new Font("Comic Sans",Font.BOLD,75));
         FontMetrics metrics2=getFontMetrics(g.getFont());
         g.drawString("Game Over", (width-metrics2.stringWidth("Game Over"))/2, height/2);
+        highscore.addHighScore(food_eaten);
+        ArrayList<Integer> scores=highscore.get_highscores();
+        g.setColor(Color.red);
+        g.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        FontMetrics metrics3=getFontMetrics(g.getFont());
+        g.drawString("High Scores:", (width-metrics3.stringWidth("High Scores:"))/2, height/2+100);
+        int startY=height/2+150;
+        g.setFont(new Font("Comic Sans",Font.BOLD,15));
+        for(int i=0; i<scores.size(); i++)
+        {
+            g.drawString((i+1)+". "+scores.get(i),(width-metrics3.stringWidth(scores.get(i).toString()))/2,startY+50*i);
+        }
     }
     @Override
     public void actionPerformed(ActionEvent e)
