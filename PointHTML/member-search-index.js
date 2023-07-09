@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Point","l":"getX()"},{"p":"<Unnamed>","c":"Point","l":"getY()"}];updateSearchResults();
